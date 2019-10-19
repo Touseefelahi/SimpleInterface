@@ -65,6 +65,28 @@ namespace Practice
     }
 
 
+    public class Azuredatabase2ForPatient : ICrud
+    {
+
+        public bool AddPatient(PatientEntry patient)
+        {
+            Console.WriteLine($"{patient.Name} with {patient.ID} is added in database2 using firebase");
+            return true;
+        }
+
+        public PatientEntry GetPatient(int id)
+        {
+            PatientEntry patient = new PatientEntry() { ID = id, Name = "NewPatientWithID" };
+            return patient;
+        }
+
+        public bool RemovePatient(PatientEntry patient, int id)
+        {
+            Console.WriteLine($"{patient.Name} with {patient.ID} is removed in database2 using firebase");
+            return true;
+        }
+    }
+
 
     public class Awsdatabase2ForPatient : ICrud
     {
